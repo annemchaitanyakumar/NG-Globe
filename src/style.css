@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Squarish Sans';
+  src: url('/fonts/SquarishSansCT.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color--brand-color: #FEC74E;
+  --color--gradient-color-01: #FEC74E;
+  --color--elements-stroke: rgba(5, 75, 110, 0.25);
+  --color--inner-shadow-color: rgba(5, 75, 110, 0.18);
+  --color--gradient-color-02: rgba(5, 75, 110, 0);
+
+  --main-font: 'Squarish Sans', sans-serif;
+  --pragraph-font: 'Squarish Sans', sans-serif;
+}
