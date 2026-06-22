@@ -62,9 +62,9 @@ export default function About() {
                         className="aspect-square w-full rounded-lg mb-4 relative overflow-hidden ring-gold"
                         style={{
                           background: `
-                            radial-gradient(circle at 30% 30%, rgba(245,215,122,0.35), transparent 55%),
-                            radial-gradient(circle at 70% 80%, rgba(138,107,31,0.45), transparent 55%),
-                            linear-gradient(135deg,#0b0d13,#181a22)
+                            radial-gradient(circle at 30% 30%, rgba(254,199,78,0.35), transparent 55%),
+                            radial-gradient(circle at 70% 80%, rgba(254,199,78,0.45), transparent 55%),
+                            linear-gradient(135deg, #054B6E, #054B6E)
                           `
                         }}
                       >

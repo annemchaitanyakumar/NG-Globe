@@ -52,8 +52,8 @@ export default function Work({ onRequestCaseBookClick }) {
                   <svg className="absolute inset-0 w-full h-full" viewBox="0 0 600 380" preserveAspectRatio="none" data-parallax="0.2">
                     <defs>
                       <linearGradient id={`g${i}`} x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="#f5d77a" stopOpacity="0.9" />
-                        <stop offset="100%" stopColor="#8a6b1f" stopOpacity="0.2" />
+                        <stop offset="0%" stopColor="#FEC74E" stopOpacity="0.9" />
+                        <stop offset="100%" stopColor="rgba(254, 199, 78, 0.2)" stopOpacity="0.2" />
                       </linearGradient>
                     </defs>
                     {Array.from({ length: 6 }).map((_, k) => (
