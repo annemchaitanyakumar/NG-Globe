@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PalettePicker from './PalettePicker';
 
 // Header component – responsive navigation adhering to brand guidelines
 export default function Header({ onPageChange }) {
@@ -32,8 +33,6 @@ export default function Header({ onPageChange }) {
             <img src="/logo-full-inverted.svg" alt="Networq Global Logo" className="h-8 md:h-9 w-auto" />
           </a>
 
-          
-
           {/* Desktop / Tablet navigation */}
           <nav className="hidden md:flex items-center gap-8 text-[15px] text-ink/80 font-medium">
             {navItems.map((item) => (
@@ -42,7 +41,7 @@ export default function Header({ onPageChange }) {
                 href="#"
                 data-cursor="link"
                 className="hover:text-gold transition-colors duration-300 py-2"
-                style={{ color: 'var(--color--brand-color)' }}
+                style={{ color: 'var(--ink)' }}
                 onClick={(e) => {
                   e.preventDefault();
                   onPageChange(item.id);
@@ -53,32 +52,40 @@ export default function Header({ onPageChange }) {
             ))}
           </nav>
 
-          {/* Hamburger button */}
-          <button
-            className={`burger-btn md:hidden lg:hidden ${mobileMenuOpen ? 'open' : ''}`}
-            onClick={toggleMobileMenu}
-            aria-label="Toggle Menu"
-          >
-            <div className="burger-inner">
-              <span className="burger-line"></span>
-              <span className="burger-line"></span>
-              <span className="burger-line"></span>
+          {/* Right-side controls */}
+          <div className="flex items-center gap-3">
+            {/* Palette Picker — desktop */}
+            <div className="hidden md:flex">
+              <PalettePicker />
             </div>
-          </button>
 
-          {/* CTA button */}
-          <a
-            href="#"
-            data-cursor="link"
-            className="btn-gold px-4 py-2 rounded-full text-sm font-medium hidden sm:inline-flex items-center gap-2"
-            style={{ background: 'var(--color--brand-color)', color: '#1a1407' }}
-            onClick={(e) => {
-              e.preventDefault();
-              onPageChange('contact');
-            }}
-          >
-            Start a project <span aria-hidden="true">→</span>
-          </a>
+            {/* Hamburger button */}
+            <button
+              className={`burger-btn md:hidden lg:hidden ${mobileMenuOpen ? 'open' : ''}`}
+              onClick={toggleMobileMenu}
+              aria-label="Toggle Menu"
+            >
+              <div className="burger-inner">
+                <span className="burger-line"></span>
+                <span className="burger-line"></span>
+                <span className="burger-line"></span>
+              </div>
+            </button>
+
+            {/* CTA button */}
+            <a
+              href="#"
+              data-cursor="link"
+              className="btn-gold px-4 py-2 rounded-full text-sm font-medium hidden sm:inline-flex items-center gap-2"
+              style={{ background: 'var(--gold)', color: '#1a1407' }}
+              onClick={(e) => {
+                e.preventDefault();
+                onPageChange('contact');
+              }}
+            >
+              Start a project <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -91,7 +98,7 @@ export default function Header({ onPageChange }) {
                 key={item.id}
                 href="#"
                 className="mobile-menu-link hover:text-gold transition-colors duration-300"
-                style={{ color: 'var(--color--brand-color)' }}
+                style={{ color: 'var(--ink)' }}
                 onClick={(e) => {
                   e.preventDefault();
                   setMobileMenuOpen(false);
@@ -101,11 +108,15 @@ export default function Header({ onPageChange }) {
                 {item.label}
               </a>
             ))}
+            {/* Mobile Palette Picker */}
+            <div className="mt-2 flex justify-center">
+              <PalettePicker />
+            </div>
             {/* Mobile CTA */}
             <a
               href="#"
               className="btn-gold px-5 py-2 rounded-full text-xs tracking-wider uppercase font-semibold inline-flex items-center gap-2 mt-4 mobile-menu-link"
-              style={{ background: 'var(--color--brand-color)', color: '#1a1407' }}
+              style={{ background: 'var(--gold)', color: '#1a1407' }}
               onClick={(e) => {
                 e.preventDefault();
                 setMobileMenuOpen(false);
